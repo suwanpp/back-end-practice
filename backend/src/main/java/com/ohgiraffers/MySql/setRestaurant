@@ -1,0 +1,7 @@
+DROP DATABASE IF EXISTS reservationdb;
+
+CREATE DATABASE IF NOT EXISTS reservationdb;
+
+GRANT ALL PRIVILEGES ON reservationdb. * TO 'ohgiraffers'@'%';
+
+SHOW GRANTS FOR 'ohgiraffers';

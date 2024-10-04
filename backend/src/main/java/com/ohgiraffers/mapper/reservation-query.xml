@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment/>
+    <entry key="selectLastReservationId">
+        SELECT MAX(A.RESERVATION_ID)
+            FROM RESERVATION A
+    </entry>
+
+    <entry key="selectAllEmployeeList">
+        SELECT A.EMPLOYEE_ID,
+               A.NAME,
+               A.PHONE
+          FROM EMPLOYEE A
+    </entry>
+
+    <entry key="addReservation">
+            INSERT INTO RESERVATION
+        (
+            RESERVATION_DATE,
+            RESERVATION_TIME,
+            GUEST_COUNT,
+            GUEST_NAME,
+            NOTE,
+            TABLE_ID,
+            EMPLOYEE_ID
+        )
+        VALUES
+        (
+            ?,
+            ?,
+            ?,
+            ?,
+            ?,
+            ?,
+            ?
+        )
+    </entry>
+
+    <entry key="selectAllReservation">
+        SELECT *
+        FROM reservation
+    </entry>
+
+    <entry key="AllTableInfo">
+        SELECT *
+        FROM tbl_restaurant
+    </entry>
+
+    <entry key="selectCustomerByName">
+        SELECT *
+        FROM CUSTOMER
+        WHERE NAME = ?
+    </entry>
+    <entry key="selectAllCustomer">
+        SELECT *
+        FROM CUSTOMER
+    </entry>
+
+    <entry key="cancelReservation">
+        DELETE
+        FROM RESERVATION
+        WHERE GUEST_NAME = ?
+
+    </entry>
+
+    <entry key="selectCustomerByName">
+        SELECT *
+        FROM CUSTOMER
+        WHERE NAME = ?
+    </entry>
+
+</properties>

@@ -9,3 +9,6 @@
 > 사용자 - 1. 예약하기 <br><br>
 > &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2. 테이블 정보 확인 <br><br>
 > &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3. 예약 취소 <br><br>
+
+# 데이터 모델링
+![image](https://github.com/user-attachments/assets/c2523f1b-cfe3-43eb-b84c-617079e7133a)

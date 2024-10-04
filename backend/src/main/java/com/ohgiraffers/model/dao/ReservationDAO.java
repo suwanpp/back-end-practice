@@ -71,7 +71,6 @@ public class ReservationDAO {
     // 마지막 예약번호 조회
     public int selectLastReservationId(Connection con){
 
-
         Statement stmt = null;
         ResultSet rset = null;
 
@@ -227,7 +226,6 @@ public class ReservationDAO {
         int guestCount = sc.nextInt();
         System.out.print("예약하는 손님의 이름을 입력해주세요 : ");
         String guestName = sc.next();
-
         System.out.print("메모 사항을 입력하세요 : ");
         String note = sc.next();
         System.out.print("테이블 번호를 입력하세요 : ");
@@ -269,6 +267,82 @@ public class ReservationDAO {
         }
         return result;
     }
+    // --------------------------------------------------------------------------
+    // 마지막 고객
+    public int selectLastCustomerId(Connection con){
+        Statement stmt = null;
+        ResultSet rset = null;
+
+        int maxCustomerId = 0;
+
+        String query = prop.getProperty("selectLastCustomerId");
+
+        try {
+            stmt = con.createStatement();
+            rset = stmt.executeQuery(query);
+
+            if(rset.next()){
+                maxCustomerId = rset.getInt("MAX(B.CUSTOMER_ID)");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            close(rset);
+            close(stmt);
+        }
+        return maxCustomerId;
+    }
+    // 고객 정보 추가
+    public int addCustomer(Connection con){
+        ReservationDAO reservationDAO = new ReservationDAO();
+        int maxCustomerId = reservationDAO.selectLastCustomerId(con);
+
+        PreparedStatement pstmt = null;
+        int result = 0;
+        CustomerDTO customerDTO = new CustomerDTO();
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("고객의 이름을 입력해주세요 : ");
+        String customerName = sc.nextLine();
+        System.out.println("고객의 번호를 입력해주세요 : ");
+        sc.next();
+        String customerPhone = sc.nextLine();
+        System.out.println("고객의 나이를 입력해주세요 : ");
+        int customerAge = sc.nextInt();
+        System.out.println("고객의 이메일을 입력해주세요 : ");
+        sc.next();
+        String customerEmail = sc.nextLine();
+
+        int customerId = maxCustomerId + 1 ;
+
+        try {
+            String query = prop.getProperty("addCustomer");
+            pstmt = con.prepareStatement(query);
+            pstmt.setString(1, customerName);
+            pstmt.setString(2,customerPhone );
+            pstmt.setInt(3,customerAge);
+            pstmt.setString(4,customerEmail);
+
+            result = pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            close(pstmt);
+        }
+        if(result > 0){
+            System.out.println("새로운 고객 정보 추가 성공");
+            System.out.println("고객 정보를 확인하시겠습니까?");
+            System.out.println("1. 예, 2. 아니오");
+            int num2 = sc.nextInt();
+            if(num2 == 1){
+                allCustomerInfo(con);
+            }
+        } else {
+            System.out.println("고객 정보 추가 실패");
+        }
+        return result;
+    }
 
     public CustomerDTO selectedCustomerName(Connection con, String selectedCustomerName){
         PreparedStatement pstmt = null;
@@ -296,6 +370,7 @@ public class ReservationDAO {
         }
         return customerDTO;
     }
+
     // 예약 취소
     public void cancelReservation(Connection con){
         Scanner sc = new Scanner(System.in);

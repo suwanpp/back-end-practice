@@ -40,14 +40,16 @@ public class Application {
                     System.out.println("사용할 번호 입력");
                     System.out.println("1. 전체 예약 조회");
                     System.out.println("2. 전체 직원 조회");
-                    System.out.println("3. 처음으로 ");
+                    System.out.println("3. 고객 정보 추가");
+                    System.out.println("4. 처음으로 ");
                     System.out.println("0. 프로그램 종료");
                     int select1 = sc.nextInt();
 
                     switch (select1) {
                         case 1 : registDAO.allReservationInfo(con); break;
                         case 2 : registDAO.selectAllEmployee(con);break;
-                        case 3 : adminMenu = false;
+                        case 3 : registDAO.addCustomer(con); break;
+                        case 4 : adminMenu = false;
                     }
                     if(select1 == 0){
                         System.out.println("프로그램을 종료합니다.");

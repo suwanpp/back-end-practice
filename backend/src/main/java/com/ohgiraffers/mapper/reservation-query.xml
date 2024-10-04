@@ -70,4 +70,27 @@
         WHERE NAME = ?
     </entry>
 
+    <entry key="addCustomer">
+        INSERT INTO CUSTOMER
+        (
+        NAME,
+        PHONE,
+        AGE,
+        EMAIL
+        )
+        VALUES
+        (
+        ?,
+        ?,
+        ?,
+        ?
+        )
+    </entry>
+
+    <entry key="selectLastCustomerId">
+        SELECT MAX(B.CUSTOMER_ID)
+        FROM CUSTOMER B
+    </entry>
+
+
 </properties>

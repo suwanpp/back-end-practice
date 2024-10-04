@@ -4,9 +4,8 @@
 > 예약 정보에는 고객 이름, 날짜, 시간, 테이블 번호 등의 정보가 포함된다.
 
 ## 주요기능
-> Create (생성) - 새로운 예약 생성 <br><br>
-> Read (조회) - 저장된 예약 정보를 조회, 특정 날짜나 시간대에 예약된 테이블을 확인하거나 고객 이름으로 검색 가능 <br><br>
-> Update (수정) - 이미 저장된 예약 정보 수정, 이미 저장된 예약 세부사항을 업데이트 가능 <br><br>
-> Delete (삭제) - 기존의 예약 정보를 삭제
-
-
+> 관리자 - 1. 전체 예약 조회 (예약된 모든 정보 확인) <br><br>
+>   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;      2. 전체 직원 조회 (직원의 정보 확인) <br><br>
+> 사용자 - 1. 예약하기 <br><br>
+> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2. 테이블 정보 확인 <br><br>
+> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3. 예약 취소 <br><br>

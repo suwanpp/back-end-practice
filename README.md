@@ -11,4 +11,6 @@
 > &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3. 예약 취소 <br><br>
 
 # 데이터 모델링
-![image](https://github.com/user-attachments/assets/c2523f1b-cfe3-43eb-b84c-617079e7133a)
+> 논리 ![image](https://github.com/user-attachments/assets/c2523f1b-cfe3-43eb-b84c-617079e7133a) <br><br>
+> 물리 ![image](https://github.com/user-attachments/assets/eb896d67-fde7-4392-a7a4-f1dbc1a738b6)
+

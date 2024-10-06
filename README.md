@@ -5,7 +5,8 @@
 
 ## 주요기능
 > 관리자 - 1. 전체 예약 조회 (예약된 모든 정보 확인) <br><br>
->   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;      2. 전체 직원 조회 (직원의 정보 확인) <br><br> 3. 고객 정보 추가 <br><br>
+>   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;      2. 전체 직원 조회 (직원의 정보 확인) <br><br>
+ &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3. 고객 정보 추가 <br><br>
 
 > 사용자 - 1. 예약하기 <br><br>
 > &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2. 테이블 정보 확인 <br><br>
